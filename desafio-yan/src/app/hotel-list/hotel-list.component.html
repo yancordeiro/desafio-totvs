@@ -1,0 +1,21 @@
+<h2>Lista de Hoteis</h2>
+
+
+<div *ngFor="let hotel of hotel">
+
+  <h3>
+
+      <a [title]="hotel.name + ' details'">
+        {{ hotel.name }}
+      </a>
+  </h3>
+
+  <p *ngIf="hotel.description">
+    Descrição: {{ hotel.description }}
+  </p>
+
+  <button (click)="detalhes()">
+    VER MAIS
+  </button>
+</div>
+
