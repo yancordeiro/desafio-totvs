@@ -1,5 +1,40 @@
-<h2>Lista de Hoteis</h2>
 
+<div class="container">
+    <h1>Lista de hoteis</h1>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+            <input type="text" class="form-control" name="filterHotel" placeholder="Digite o nome do hotel." [(ngModel)]='filterHotel'>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table tabel-striped">
+        <thead>
+          <tr class="tr">
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Pacotes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let hotel of hotel | filter:filterHotel">
+            <td>{{ hotel.name }}</td>
+            <td>{{hotel.description}}</td>
+            <td>
+              <button (click)="openDialog()">
+                VER MAIS
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--
 <div *ngFor="let hotel of hotel">
 
   <h3>
@@ -17,4 +52,4 @@
     VER MAIS
   </button>
 </div>
-
+-->

@@ -12,10 +12,11 @@ export class HotelListComponent {
 
   constructor(public dialog: MatDialog){}
   hotel = hotels;
+  filterHotel = '';
 
   openDialog(): void {
     const dialogRef = this.dialog.open(MyDialogComponent, {
-      width: '500px'
+      width: '250px'
     });
 
     dialogRef.afterClosed().subscribe(result => {

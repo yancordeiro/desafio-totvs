@@ -10,6 +10,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
     TopBarComponent,
     HotelListComponent,
     MyDialogComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
       {path: '', component: HotelListComponent},
     ]),
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
   ],
   entryComponents: [
     MyDialogComponent
