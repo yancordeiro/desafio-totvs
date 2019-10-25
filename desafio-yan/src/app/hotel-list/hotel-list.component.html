@@ -1,38 +1,32 @@
 
 <div class="container">
-    <h1>Lista de hoteis</h1>
+
+    <h1><label for="name">Lista de hoteis</label></h1>
+    <input type="text" class="form-control" name="filterHotel" placeholder="Digite o nome do hotel." [(ngModel)]='filterHotel'>
     <div class="row">
       <div class="col">
         <div class="form-group">
-            <input type="text" class="form-control" name="filterHotel" placeholder="Digite o nome do hotel." [(ngModel)]='filterHotel'>
           </div>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col">
-      <table class="table tabel-striped">
-        <thead>
-          <tr class="tr">
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Pacotes</th>
-          </tr>
-        </thead>
+
         <tbody>
           <tr  *ngFor="let hotel of hotel | filter:filterHotel">
-            <td>{{ hotel.name }}</td>
-            <td>{{hotel.description}}</td>
             <td>
-              <button (click)="openDialog()">
-                VER MAIS
-              </button>
-            </td>
+               <mat-expansion-panel class="expansion-panel">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                      {{ hotel.name }}
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>{{hotel.description}}.</p>
+                <button (click)="openDialog()">
+                    Ver Mais
+                  </button>
+              </mat-expansion-panel>
           </tr>
         </tbody>
-      </table>
-    </div>
-  </div>
 
   <!--
 <div *ngFor="let hotel of hotel">
