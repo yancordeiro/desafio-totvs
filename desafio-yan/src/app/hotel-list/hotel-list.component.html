@@ -1,6 +1,5 @@
 <h2>Lista de Hoteis</h2>
 
-
 <div *ngFor="let hotel of hotel">
 
   <h3>
@@ -14,7 +13,7 @@
     Descrição: {{ hotel.description }}
   </p>
 
-  <button (click)="detalhes()">
+  <button (click)="openDialog()">
     VER MAIS
   </button>
 </div>

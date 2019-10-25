@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MyDialogComponent } from './my-dialog/my-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
     HotelListComponent,
+    MyDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ]),
     BrowserAnimationsModule,
     MatDialogModule
+  ],
+  entryComponents: [
+    MyDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
